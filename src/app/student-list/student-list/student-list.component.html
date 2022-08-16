@@ -1,0 +1,28 @@
+<!-- <p>student-list works!</p> -->
+<table border="1">
+
+    <thead>
+        <th>Student ID</th>
+        <th>Full Name</th>
+        <th>Class</th>
+        <th>Roll No</th>
+        <th>Maths</th>
+        <th>English</th>
+        <th>Hindi</th>
+        <th>Science</th>
+        <th>Drawing</th>
+        <th>Total</th>
+    </thead>
+    <tr *ngFor="let emp of employee">
+        <td>{{emp.StudentId}}</td>
+        <td>{{emp.FirstName + " " + emp.MiddleName + " " + emp.LastName}}</td>
+        <td>{{emp.Class}}</td>
+        <td>{{emp.RollNo}}</td>
+        <td appColoring [forecolor]="(emp.Math)>35?'blue':'red'">{{emp.Math}}</td>
+        <td appColoring [forecolor]="(emp.English)>35?'blue':'red'">{{emp.English}}</td>
+        <td appColoring [forecolor]="(emp.Hindi)>35?'blue':'red'">{{emp.Hindi}}</td>
+        <td appColoring [forecolor]="(emp.Science)>35?'blue':'red'">{{emp.Science}}</td>
+        <td appColoring [forecolor]="(emp.Drawing)>35?'blue':'red'">{{emp.Drawing}}</td>
+        <td appColoring [forecolor]="(emp.Math + emp.English + emp.Hindi + emp.Science + emp.Drawing)>450?'green':'blue'">{{emp.Math + emp.English + emp.Hindi + emp.Science + emp.Drawing}}</td>
+    </tr>
+</table>
